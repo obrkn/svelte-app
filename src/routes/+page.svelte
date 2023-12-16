@@ -1,59 +1,48 @@
-<script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
-</script>
-
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+<div class="container mx-auto py-12 px-4">
+  <div class="grid grid-cols-1 content-center h-full gap-4">
+    <a
+      href="./pokemons/1"
+      class="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-2xl hover:border-2 hover:border-blue-500 hover:scale-105 w-full p-12"
+    >
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${Math.ceil(
+          Math.random() * 151
+        )}.png`}
+        class="mx-auto"
+        alt="pokemon"
+      />
+      <div class="text-2xl m-auto text-bold text-gray-700 italic">
+        First Generation
+      </div>
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${Math.ceil(
+          Math.random() * 151
+        )}.png`}
+        class="mx-auto"
+        alt="pokemon"
+      />
+    </a>
+    <a
+      href="./pokemons/2"
+      class="grid grid-cols-1 md:grid-cols-3 gap-4 rounded-2xl hover:border-2 hover:border-blue-500 hover:scale-105 w-full p-12"
+    >
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+          151 + Math.ceil(Math.random() * 100)
+        }.png`}
+        class="mx-auto"
+        alt="pokemon"
+      />
+      <div class="text-2xl m-auto text-bold text-gray-700 italic">
+        Second Generation
+      </div>
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
+          151 + Math.ceil(Math.random() * 100)
+        }.png`}
+        class="mx-auto"
+        alt="pokemon"
+      />
+    </a>
+  </div>
+</div>
