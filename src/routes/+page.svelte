@@ -9,7 +9,7 @@
           Math.random() * 151
         )}.png`}
         class="mx-auto"
-        alt="pokemon"
+        alt="pokemon top-left"
       />
       <div class="text-2xl m-auto text-bold text-gray-700 italic">
         First Generation
